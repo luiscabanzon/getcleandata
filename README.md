@@ -1,6 +1,6 @@
-## GETTING AND CLEANING DATA:
+# GETTING AND CLEANING DATA:
 ## PEER ASSESTMENT
-===============================================================
+
 Kindly find below the code used to transform the original dataset, extracted from
 [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) :
 
@@ -9,7 +9,7 @@ Kindly find below the code used to transform the original dataset, extracted fro
 ```{r eval =FALSE}
 features = read.table("/home/honulele/R_env/GetData2/data/features.txt", header = FALSE)
 labels = read.table("/home/honulele/R_env/GetData2/data/activity_labels.txt", header = FALSE)
-```
+
 x_test <- read.table("/home/honulele/R_env/GetData2/data/test/X_test.txt", header = FALSE)
 y_test <- read.table("/home/honulele/R_env/GetData2/data/test/y_test.txt", header = FALSE)
 subject_test <- read.table("/home/honulele/R_env/GetData2/data/test/subject_test.txt", header = FALSE)
@@ -17,6 +17,7 @@ subject_test <- read.table("/home/honulele/R_env/GetData2/data/test/subject_test
 x_train <- read.table("/home/honulele/R_env/GetData2/data/train/X_train.txt", header = FALSE)
 y_train <- read.table("/home/honulele/R_env/GetData2/data/train/y_train.txt", header = FALSE)
 subject_train <- read.table("/home/honulele/R_env/GetData2/data/train/subject_train.txt", header = FALSE)
+```
 
 ### 1.b : NAMING COLUMNS
 ```{r eval =FALSE}
@@ -65,5 +66,7 @@ average_per_activity_subject <- ddply(data, .(activity_id, subject_id),
 write.table(average_per_activity_subject, "average_per_activity_subject.txt", row.name = FALSE)
 
 ```
+
+
 
 Please find the final outcome [here](https://github.com/luiscabanzon/getcleandata/blob/master/average_per_activity_subject.txt).
